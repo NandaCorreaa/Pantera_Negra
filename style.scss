@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+}
+
+$fontPlayfair: "Playfair Display", serif ; 
+
+
+//Mixin com parâmetros
+@mixin display($justify, $align) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+body {
+    background-image: url("./Assets/backgroundPanteraNegra.jpg");
+    background-size: cover;
+    @include display( center, center );
+    flex-direction: column;
+}
+
+header {
+    color: #fff;
+    height: 12vh;
+    width: 100%;
+    @include display(space-evenly, center)
+}
+
+h2 {
+    font-family: $fontPlayfair;
+    font-size: 34px;
+}
+
+nav{
+    width: 30%;
+}
+
+nav ul {
+    width: 100%;
+    @include display(space-between, center)
+}
+
+nav a {
+    font-size: 20px;
+}
+
+nav a:hover{
+    text-decoration: underline double #97068D;
+}
+
+header div {
+    width: 40%;
+    @include display(space-around, center);
+
+    img {
+        width: 4vw;
+        cursor: pointer;
+    }
+}
+
+header .barraDePesquisa {
+    border: solid #97068D;
+    width: 45%;
+    border-radius: 100px;
+    height: 6vh;
+    @include display(space-evenly, center);
+
+    img {
+        width: 2vw;
+    }
+
+    input {
+        background-color: transparent;
+        border: none;
+        width: 75%;
+        height: 4vh;
+    }
+}
+
+main {
+    width: 90%;
+}
+
+.generos {
+    width: 30%;
+    height: 12vh;
+    @include display(space-between,center )
+}
+
+.generos li {
+    border: #97068D solid;
+    border-radius: 100px;
+    padding: 8px 15px ;
+}
+
+.generos li:hover {
+    background-color: #97068d6b;
+}
+
+section {
+    width: 100%;
+}
+
+h1 {
+    font-size: 7.5rem;
+    font-family: $fontPlayfair;
+}
+
+section p {
+    width: 50%;
+    font-size: 1.563rem;
+}
+
+section ul {
+    width: 30%;
+    height: 10vh;
+    @include display(space-between, center);
+    font-size: 1.563rem;
+}
+
+.botoes {
+    height: 12vh;
+    width: 25%;
+    @include display(space-between, center)
+}
+
+.botoes button {
+    height: 8vh;
+    padding: 0 20px;
+    font-size: 1.25rem;
+    background: transparent linear-gradient(270deg, #FE8FBF 0%, #97068D 100%) 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.botoes button:hover {
+    background: #97068D;
+}
+
+.classificacoes {
+    height: 15vh;
+    width: 30%;
+    @include display(space-between, center);
+}
+
+.classificacoes p {
+    @include display(center, center);
+    flex-direction: column;
+    font-size: 3.75rem;
+    font-family: $fontPlayfair;
+    width: auto;
+}
+
+.classificacoes span {
+    font-size: 0.938rem;
+    width: 50%;
+    text-align: center;
+}
